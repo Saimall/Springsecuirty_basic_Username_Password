@@ -34,4 +34,13 @@ public class UserService {
 		return userrepository.findAll();
 	}
 
+
+	public String getToken(String username) {
+		return JwtServices.generateToken(username);
+	}
+	
+	public boolean validatetoken(String token) {
+		return JwtServices.validateToken(token);
+	}
+
 }
